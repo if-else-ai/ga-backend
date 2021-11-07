@@ -1,0 +1,7 @@
+numpy
+imageio
+pygad
+matplotlib
+flask
+celery
+redis
