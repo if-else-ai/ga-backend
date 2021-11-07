@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  ga:
+    build:
+      context: ./ga
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "5000:5000"
+    depends_on:
+      - redis
+    volumes:
+      - ./uploads:/uploads
+
+  worker:
+    build:
+      context: ./worker
+      dockerfile: Dockerfile
+    restart: always
+    depends_on:
+      - redis
+    volumes:
+      - ./worker:/tasks
+      - ./uploads:/uploads
+    command: celery -A tasks worker -l info
+    environment:
+      CELERY_BROKER_URL: redis://redis
+      CELERY_RESULT_BACKEND: redis://redis
+  
+  redis:
+    image: redis:alpine
+    restart: always
+    ports:
+      - "7000:6379"
+    volumes:
+      - ./redis:/data
+
+volumes:
+  uploads: {}
+  data: {}
