@@ -57,8 +57,8 @@ def ga(target_im_name, target_generation):
         cur_fitness = ga_instance.best_solution()[1]
 
         if ga_instance.generations_completed % 500 == 0:
-            matplotlib.pyplot.imsave(os.path.join(UPLOAD_FOLDER, 'solution_'+str(ga_instance.generations_completed) +
-                                     '.png', gari.chromosome2img(ga_instance.best_solution()[0], target_im.shape)))
+            matplotlib.pyplot.imsave(os.path.join(UPLOAD_FOLDER, 'solution_' + str(ga_instance.generations_completed) +
+                                     '.png'), gari.chromosome2img(ga_instance.best_solution()[0], target_im.shape))
 
         current_task.update_state(state='PROGRESS',
                                   meta={'current_generation': cur_generation,
