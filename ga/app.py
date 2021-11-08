@@ -62,7 +62,7 @@ def index():
 @app.route('/run', methods=['POST'])
 def run():
     task = celery.send_task('tasks.run_ga', args=[
-                            request.json['filename'], request.json['generation']])
+                            request.json['filename'], request.json['generation'], request.json['split'], ])
     return jsonify({'task_id': task.id}), 202, {'Location': url_for('taskstatus', task_id=task.id)}
 
 
