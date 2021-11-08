@@ -88,8 +88,9 @@ def taskstatus(task_id):
             'sol_im': task.info.get('sol_im', []),
             'status': task.info.get('status', '')
         }
-        if task.info.get('status', '') == 'Completed':
+        if 'result' in task.info:
             response['result'] = task.info.get('result', '')
+        # if task.info.get('status', '') == 'Completed':
     else:
         # something went wrong in the background job
         response = {
