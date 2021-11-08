@@ -108,7 +108,7 @@ def taskstatus(task_id):
 @app.route('/tasks/<task_id>', methods=['GET', 'POST'])
 def handle_tasks(task_id):
     if request.method == 'GET':
-        tasks = celery.control.inspect().active
+        tasks = celery.control.inspect()
         return jsonify(tasks)
     if request.method == 'POST':
         task = celery.control.revoke(task_id, terminate=True)
