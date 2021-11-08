@@ -1,5 +1,6 @@
 import os
 import time
+import math
 
 import numpy
 import imageio
@@ -59,7 +60,7 @@ def ga(target_im_name, target_generation, target_split):
         cur_generation = ga_instance.generations_completed
         cur_fitness = ga_instance.best_solution()[1]
 
-        if ga_instance.generations_completed % int(target_generation / target_split) == 0:
+        if ga_instance.generations_completed % math.floor(target_generation / target_split) == 0:
             sol_im_name = str(time.time()).rsplit('.', 1)[0] + '.png'
             matplotlib.pyplot.imsave(os.path.join(UPLOAD_FOLDER, sol_im_name), gari.chromosome2img(
                 ga_instance.best_solution()[0], target_im.shape))
