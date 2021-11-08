@@ -104,6 +104,17 @@ def taskstatus(task_id):
     return jsonify(response)
 
 
+# Route for manage tasks
+@app.route('/tasks/<task_id>', methods=['GET', 'POST'])
+def handle_tasks(task_id):
+    if request.method == 'GET':
+        tasks = celery.control.inspect().active
+        return jsonify(tasks)
+    if request.method == 'POST':
+        task = celery.control.revoke(task_id, terminate=True)
+        return jsonify({'status': 'success'}), 200
+
+
 if __name__ == '__main__':
     print('Starting the server...')
     print('Server is running on port 5000')
