@@ -1,4 +1,5 @@
 import os
+import time
 
 import numpy
 import imageio
@@ -23,6 +24,7 @@ cur_fitness = 0
 fitness_val_of_best_sol = 0
 index_of_best_sol = 0
 best_fitness_val_reached_in_gen = 0
+sol_im = []
 
 
 # Run the genetic algorithm.
@@ -52,18 +54,22 @@ def ga(target_im_name, target_generation):
     def callback(ga_instance):
         global cur_generation
         global cur_fitness
+        global sol_im
 
         cur_generation = ga_instance.generations_completed
         cur_fitness = ga_instance.best_solution()[1]
 
         if ga_instance.generations_completed % 500 == 0:
-            matplotlib.pyplot.imsave(os.path.join(UPLOAD_FOLDER, 'solution_' + str(ga_instance.generations_completed) +
-                                     '.png'), gari.chromosome2img(ga_instance.best_solution()[0], target_im.shape))
+            sol_im_name = str(time.time()).rsplit('.', 1)[0] + '.png'
+            matplotlib.pyplot.imsave(os.path.join(UPLOAD_FOLDER, sol_im_name), gari.chromosome2img(
+                ga_instance.best_solution()[0], target_im.shape))
+            sol_im.append(sol_im_name)
 
         current_task.update_state(state='PROGRESS',
                                   meta={'current_generation': cur_generation,
                                         'target_generatiion': tar_generation,
                                         'current_fitness': cur_fitness,
+                                        'sol_im': sol_im,
                                         'status': 'Progressing...'})
 
     ga_instance = pygad.GA(num_generations=target_generation,
@@ -93,6 +99,7 @@ def ga(target_im_name, target_generation):
     return {'current_generation': tar_generation,
             'target_generatiion': tar_generation,
             'current_fitness': cur_fitness,
+            'sol_im': sol_im,
             'result': f'{fitness_val_of_best_sol} {index_of_best_sol} {best_fitness_val_reached_in_gen}',
             'status': 'Completed',
             }
