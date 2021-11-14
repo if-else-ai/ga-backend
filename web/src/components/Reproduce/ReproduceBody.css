@@ -1,0 +1,50 @@
+.button__upload input {
+    display: none;
+}
+
+.reproduce__container {
+    display: flex;
+    flex-direction: column;
+}
+
+.reproduce__container p {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.form__container input{
+    align-self: center;
+    width: 7rem;
+}
+
+.image__items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.image__animation-container img {
+    display: block;
+    margin: 0 auto;
+    
+    border: 4px black;
+}
+
+input {
+    margin: 0 4px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

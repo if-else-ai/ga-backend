@@ -1,0 +1,56 @@
+.button__upload {
+    /* display: flex; */
+    margin: 16px 4px;
+    padding: 10px 40px;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(123, 66, 255);
+    color: white;
+    cursor: pointer;
+}
+
+.button__upload:hover {
+    background-color: #1520c0;
+    transition: all 0.3s ease-in;
+}
+
+.button-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.button__start {
+    /* display: flex; */
+    margin: 16px 4px;
+    padding: 10px 40px;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(36, 247, 53);
+    color: white;
+    cursor: pointer;
+}
+
+.button__disable {
+    /* display: flex; */
+    margin: 16px 4px;
+    padding: 10px 40px;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(175, 175, 175);
+    color: white;
+}
+
+
+.button__start:hover {
+    background-color: rgb(6, 143, 75);
+    transition: all 0.3s ease-in;
+}
+
+

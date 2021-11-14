@@ -1,0 +1,100 @@
+.member {
+  margin: 20px 0;
+}
+.member > h1 {
+  margin: 20px 0;
+}
+
+.member__items {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0px 40px;
+}
+
+.member__item {
+  position: relative;
+  display: flex;
+  margin: 12px 12px;
+}
+
+.member__image {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.member__items img{
+  position: relative;
+  display: block;
+  height: 280px;
+  width: 100%;
+  top: 0;
+  object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
+  /* object-position: 0 20%; */
+  transition: transform 0.5s ease;
+
+}
+.member__items img:hover{
+  transform: scale(1.2);
+}
+
+/* .member__image img {
+  border-radius: 10px 10px 0px 0px;
+  justify-self: center;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+} */
+
+/* .member__image img:hover {
+  transform: scale(1.2);
+} */
+
+.member__item p {
+  font-weight: bold;
+}
+
+.card-text {
+  margin: 4px 10px 0 10px;
+  padding-top: 10px;
+  font-size: 18px;
+}
+
+.card-text p:first-child {
+  font-size: 18px;
+}
+
+
+
+.chip__items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 10px;
+}
+
+.chip__item {
+  margin: 4px 4px 4px 0;
+}
+.chip__item > span {
+  font-weight: bold;
+  font-family: Helvetica;
+  padding: 4px 16px;
+  background-color: rgb(165, 97, 255);
+  color: white;
+  border-radius: 6px;
+}
+
+.card-id {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 0 10px 4px 0;
+  align-self: end;
+  font-weight: bold;
+  margin-left: 4px;
+}

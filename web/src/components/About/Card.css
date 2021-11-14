@@ -1,0 +1,29 @@
+.member-card {
+  overflow: hidden;
+  width: 20rem;
+  height: 30rem;
+  /* background-color: rgb(166, 210, 255); */
+  border-color: black;
+  border-width: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.member-card:hover {
+  box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.253);
+}
+
+.team-member {
+  /* background-size: contain; */
+  background-color: rgb(240, 240, 240);
+}
+
+.project-manager {
+  /* background-size: contain; */
+  background-color: rgb(255, 243, 209);
+}
+
+.member-card > p,
+span {
+  padding: 0 16px;
+}

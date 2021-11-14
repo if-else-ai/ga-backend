@@ -1,0 +1,16 @@
+.page-header {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    margin: -40px -40px 40px -40px;
+    padding: 10px;
+    background-color: rgb(223, 223, 223);
+    box-shadow: 0px 2px 2px -1px #8d8d8d36;
+
+}
+
+.page-header ol {
+    margin-left: 16px;
+}

@@ -1,0 +1,90 @@
+.hero-container {
+  /* background-image : url("/images/img-home.jpg") center center/cover no-repeat; */
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  height: 85vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
+  margin: 0;
+  padding: 0;
+}
+.hero-container > h1 {
+  color: #fff;
+  font-size: 100px;
+  margin-top: -100px;
+  z-index: 1;
+}
+
+
+#video-container {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: absolute;
+  height: inherit;
+  z-index: 1;
+}
+#video-container video {
+  overflow: hidden;
+  filter: blur(2px);
+  transform: scale(1.1);
+  object-fit: cover;
+  z-index: 1;
+}
+
+
+
+.hero-container > p {
+  margin-top: 8px;
+  color: #fff;
+  font-size: 32px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+  "Lucida Sans", Arial, sans-serif;
+  z-index: 1;
+}
+
+.hero-btns {
+  margin-top: 32px;
+  z-index: 2;
+  z-index: 1;
+}
+
+.hero-btns .btn {
+  margin: 6px;
+  z-index: 1;
+}
+
+.fa-play-circle {
+  margin-left: 4px;
+  z-index: 1;
+}
+
+@media screen and (max-width: 960px) {
+  .hero-container > h1 {
+    font-size: 70px;
+    margin-top: -150px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-container > h1 {
+    font-size: 50px;
+  }
+
+  .hero-container > p {
+    font-size: 30px;
+  }
+
+  .btn-mobile {
+    display: block;
+    text-decoration: none;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
