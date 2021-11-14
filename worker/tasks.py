@@ -26,6 +26,7 @@ fitness_val_of_best_sol = 0
 index_of_best_sol = 0
 best_fitness_val_reached_in_gen = 0
 sol_im = []
+sol_im_tmp = []
 
 
 # Run the genetic algorithm.
@@ -35,6 +36,10 @@ def ga(target_im_name, target_generation, target_split):
     global fitness_val_of_best_sol
     global index_of_best_sol
     global best_fitness_val_reached_in_gen
+    global sol_im
+    global sol_im_tmp
+
+    sol_im_tmp = []
 
     tar_generation = target_generation
 
@@ -55,7 +60,6 @@ def ga(target_im_name, target_generation, target_split):
     def callback(ga_instance):
         global cur_generation
         global cur_fitness
-        global sol_im
 
         cur_generation = ga_instance.generations_completed
         cur_fitness = ga_instance.best_solution()[1]
@@ -97,10 +101,13 @@ def ga(target_im_name, target_generation, target_split):
     if ga_instance.best_solution_generation != -1:
         best_fitness_val_reached_in_gen = ga_instance.best_solution_generation
 
+    sol_im_tmp = sol_im
+    sol_im = []
+
     return {'current_generation': tar_generation,
             'target_generatiion': tar_generation,
             'current_fitness': cur_fitness,
-            'sol_im': sol_im,
+            'sol_im': sol_im_tmp,
             'result': f'{fitness_val_of_best_sol} {index_of_best_sol} {best_fitness_val_reached_in_gen}',
             'status': 'Completed',
             }
