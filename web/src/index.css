@@ -10,9 +10,9 @@ body {
   scrollbar-width: none;  /* Firefox */
 }
 /* Hide scrollbar for Chrome, Safari and Opera */
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
   display: none;
-}
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
