@@ -36,8 +36,8 @@
   margin-right: auto;
   /* object-position: 0 20%; */
   transition: transform 0.5s ease;
-
 }
+
 .member__items img:hover{
   transform: scale(1.2);
 }
