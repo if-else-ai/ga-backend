@@ -6,7 +6,7 @@ export const Team = [
 			"Project Manager",
 			"Head of Back-end Department",
 			"Back-end Teacher",
-			"Python-GA",
+			"Deploy"
 		],
 		image: "/images/contributor/Punnarat.jpg",
 		isPM: true,
@@ -14,7 +14,7 @@ export const Team = [
 	{
 		id: "62050133",
 		name: "Kunasin Charusiriwat",
-		role: ["GA-Information", "Python-GA"],
+		role: ["GA-Information", "Tester"],
 		image: "/images/contributor/Kunasin.jpg",
 		isPM: false,
 	},
@@ -28,14 +28,14 @@ export const Team = [
 	{
 		id: "62050146",
 		name: "Chutiyakan Oonjon",
-		role: ["Front-end", "GA-Information", "Slide Maker"],
+		role: ["About-Page", "Slide"],
 		image: "/images/contributor/Chutiyakan.jpg",
 		isPM: false,
 	},
 	{
 		id: "62050149",
 		name: "Noppawat Boonma",
-		role: ["GA-Information", "Python-GA"],
+		role: ["GA-Information", "Python-Algorithm"],
 		image: "/images/contributor/Noppawat.jpg",
 		isPM: false,
 	},
@@ -45,7 +45,7 @@ export const Team = [
 		role: [
 			"Head of Front-end Department",
 			"Front-end Teacher",
-			"Python-GA",
+			"Reproduce Image page",
 		],
 		image: "/images/contributor/Natthadecha.jpg",
 		isPM: false,
@@ -53,14 +53,14 @@ export const Team = [
 	{
 		id: "62050163",
 		name: "Thirawat Phongsathatkit",
-		role: ["Head of UX/UI Design Department", "Front-end", "GA.gif Maker"],
+		role: ["Head of UX/UI Design Department", "Animator"],
 		image: "/images/contributor/Thirawat.jpg",
 		isPM: false,
 	},
 	{
 		id: "62050190",
 		name: "Praphat Wachiramateekul",
-		role: ["Front-end", "GA-Information"],
+		role: ["Home page", "GA-Information"],
 		image: "/images/contributor/Praphat.jpg",
 		isPM: false,
 	},
