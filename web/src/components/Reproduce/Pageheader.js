@@ -22,7 +22,8 @@ import "./Pageheader.css";
              At the end the animation will be shown to show how the generation progression looks like
             </li>
           </ol>
-          <p>*Recommend generate small Generation first to see how its will look like</p>
+          <p>*Better try generate small Generation first to see how its will look like</p>
+          <p>*Don't forget to start backend server! </p>
         </div>
       </div>
     );
