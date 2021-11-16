@@ -114,7 +114,15 @@ const ReproduceBody = () => {
 				setImageArray(imageArray)
 				console.log(res)
 				if(res.data.status === 'Completed' || res.data.state === "FAILURE"){
-					console.log('res', res)
+					console.log('res', res.data.result)
+					let finishData = res.data.result
+					finishData = finishData.split(' ')
+					let Data = {
+						bestFit: finishData[0],
+						bestFitGeneration: finishData[2]
+					}
+					setBestResult(Data)
+
 					axios.post(`/tasks/${taskID}`).then(
 						res => {
 							console.log('clear', taskID)
@@ -176,10 +184,17 @@ const ReproduceBody = () => {
 		)
 	}
 
-	let bestResult = <p></p>;
+	let bestFitness = <p></p>;
+	let bestGeneration= <p></p>;
 
-	if(result){
-		bestResult = <p>{result}</p>;
+	if(bestResult){
+		bestFitness = (<p>Best Fitness is: {bestResult.bestFit}</p>
+						);
+	}
+
+	if(bestResult){
+		bestGeneration = (<p>Best Fitness Generation: {bestResult.bestFitGeneration}</p>
+						);
 	}
 
 
@@ -219,6 +234,8 @@ const ReproduceBody = () => {
 				<p>Current Generation: {generated}</p>
 				<p>Fitness: {fitness}</p>
 				<p>Status: {status}</p>
+				{bestFitness}
+				{bestGeneration}
 			</div>
 			
 			{animation}
