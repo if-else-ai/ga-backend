@@ -23,6 +23,7 @@ const ReproduceBody = () => {
 	let [imageArray, setImageArray] = useState([])
 	let [imageAnimationIndex, setImageAnimationIndex] = useState(0)
 	let [finishGenerate, setFinishGenerate] = useState(false)
+	let [bestResult, setBestResult] = useState('')
 	let animationIndex = 0
 	var intervalID
 
@@ -113,6 +114,15 @@ const ReproduceBody = () => {
 				setImageArray(imageArray)
 				console.log(res)
 				if(res.data.status === 'Completed' || res.data.state === "FAILURE"){
+					console.log('res', res.data.result)
+					let finishData = res.data.result
+					finishData = finishData.split(' ')
+					let Data = {
+						bestFit: finishData[0],
+						bestFitGeneration: finishData[2]
+					}
+					setBestResult(Data)
+
 					axios.post(`/tasks/${taskID}`).then(
 						res => {
 							console.log('clear', taskID)
@@ -124,6 +134,7 @@ const ReproduceBody = () => {
 						playAnimation()
 					},1000)
 				}
+				
 			}
 		)
 	};
@@ -173,6 +184,20 @@ const ReproduceBody = () => {
 		)
 	}
 
+	let bestFitness = <p></p>;
+	let bestGeneration= <p></p>;
+
+	if(bestResult){
+		bestFitness = (<p>Best Fitness is: {bestResult.bestFit}</p>
+						);
+	}
+
+	if(bestResult){
+		bestGeneration = (<p>Best Fitness Generation: {bestResult.bestFitGeneration}</p>
+						);
+	}
+
+
 
 	return (
 		<div className="reproduce__container">
@@ -205,18 +230,17 @@ const ReproduceBody = () => {
 				</button>
 			</div>
 
-
 			<div>
 				<p>Current Generation: {generated}</p>
 				<p>Fitness: {fitness}</p>
 				<p>Status: {status}</p>
+				{bestFitness}
+				{bestGeneration}
 			</div>
 			
 			{animation}
 
 			{generatedImage}
-			
-			
 
 		</div>
 	);
