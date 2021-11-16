@@ -124,6 +124,7 @@ const ReproduceBody = () => {
 						playAnimation()
 					},1000)
 				}
+				
 			}
 		)
 	};

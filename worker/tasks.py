@@ -52,7 +52,6 @@ def ga(target_im_name, target_generation, target_split):
 
     def fitness_fun(solution, solution_idx):
         fitness = numpy.sum(numpy.abs(target_chromosome-solution))
-
         # Negating the fitness value to make it increasing rather than decreasing.
         fitness = numpy.sum(target_chromosome) - fitness
         return fitness
