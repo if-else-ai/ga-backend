@@ -8,6 +8,10 @@
 
 `cd ga-backend`
 
+`git checkout -b development`
+
+`git pull origin development`
+
 `docker-compose up -d --build`
 
 ## To logging the container run the following command
