@@ -4,9 +4,13 @@
 
 `git clone https://github.com/if-else-ai/ga-backend`
 
-## Then run the following command
+## Then run the following command to run locally
 
 `cd ga-backend`
+
+`git checkout -b development`
+
+`git pull origin development`
 
 `docker-compose up -d --build`
 
